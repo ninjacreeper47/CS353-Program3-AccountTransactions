@@ -1,7 +1,10 @@
 #lang racket
 
 (provide file->accounts)
-(provide account)
+(provide (struct-out account))
+
+(struct account (ID name balance transactions) #:inspector #f)
+
 
 ;Precondition:  Takes in a string representing a filename
 ;Postcondition: Reads the contents of the  file and returns a hash containing accounts populated from the lines of the file
@@ -10,7 +13,7 @@
    (map account-input-line->account
     (file->lines filename)) key-rule:account-ID))
 
-(struct account (ID name balance transactions) #:inspector #f)
+
 
 ;Precondition:  Takes in a string that contains  id, then name, then balance- all seperated by whitespace
 ;Postcondition: returns an account populated with information contained in the string (and an empty transaction list)
@@ -37,3 +40,4 @@
 ;Postcondition: Returns the ID of that account
 (define (key-rule:account-ID in-account)
   (account-ID in-account))
+
