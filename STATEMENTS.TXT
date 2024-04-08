@@ -1,6 +1,9 @@
 STATEMENT OF ACCOUNT
 456109801804    J. L. Picard    Starting Balance:     0.0
+456109801804
 STATEMENT OF ACCOUNT
 982340982348    Spacely Sprockets    Starting Balance:     29109.14
+982340982348
 STATEMENT OF ACCOUNT
 234987234981    J. T. Kirk & Co.    Starting Balance:     298.18
+234987234981

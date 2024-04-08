@@ -11,7 +11,7 @@
 (provide file->transaction-lines)
 (provide process-transactions)
 
-(struct transaction (transaction-ID account-num timestamp purchase/payment ) #:inspector #f)
+(struct transaction (ID account-num timestamp purchase/payment ) #:inspector #f)
 (struct purchase (merchant amount))
 (struct payment (pay-method amount))
 (struct credit-card (card-num))

@@ -32,7 +32,16 @@
   (display (account-start-balance acc ) out)
   (displayln "" out))
 
-(define (statement-body out acc)
-  null)
+(define (statement-body acc out)
+  (print-transaction (account-transactions acc) out))
+
+(define (print-transaction trans-list out)
+  (if (empty? trans-list)
+      (displayln "" out)
+      (begin
+        (displayln (transaction->string (first trans-list)) out))))
 (define (statement-footer acc out)
   null)
+
+(define (transaction->string trans)
+  (string-append (number->string (transaction-ID trans))) (number->string (transaction-account-num trans)))
