@@ -1,9 +1,34 @@
 STATEMENT OF ACCOUNT
 456109801804    J. L. Picard    Starting Balance:     0.0
-456109801804
+
+10002    Purchase    Sid's Lids    132.75
+10005    Payment    Cash    105.0
+
+
+Total Purchases:        TODO: total purchases
+Total Payments:        TODO: total payments
+Ending Balance:        TODO:ending balance
+*********************************************************
 STATEMENT OF ACCOUNT
 982340982348    Spacely Sprockets    Starting Balance:     29109.14
-982340982348
+
+10003    Payment    Credit    10000.0
+10004    Purchase    Mort's Metals    17293.14
+10006    Purchase    Peter's Plastics    416.92
+10007    Payment    Check    20000.0
+
+
+Total Purchases:        TODO: total purchases
+Total Payments:        TODO: total payments
+Ending Balance:        TODO:ending balance
+*********************************************************
 STATEMENT OF ACCOUNT
 234987234981    J. T. Kirk & Co.    Starting Balance:     298.18
-234987234981
+
+10001    Purchase    Culvers    14.72
+
+
+Total Purchases:        TODO: total purchases
+Total Payments:        TODO: total payments
+Ending Balance:        TODO:ending balance
+*********************************************************

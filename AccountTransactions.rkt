@@ -5,18 +5,15 @@
 (provide (struct-out transaction))
 (provide (struct-out purchase))
 (provide (struct-out payment))
-(provide (struct-out credit-card))
-(provide (struct-out debit-card))
-(provide (struct-out cheque))
 (provide file->transaction-lines)
 (provide process-transactions)
 
 (struct transaction (ID account-num timestamp purchase/payment ) #:inspector #f)
 (struct purchase (merchant amount))
-(struct payment (pay-method amount))
-(struct credit-card (card-num))
-(struct debit-card (card-num))
-(struct cheque (cheque-num))
+(struct payment (pay-method amount)) ; a pay-method is a list containing a label then method-specific data 
+
+
+
 
 ;Precondition: Takes in a string representing an input file name. Lines on this file match the formating expected of Transaction Input
 ;Postcondition: Returns a list of strings where each string is a line of filename
@@ -69,10 +66,10 @@
   (let ([pay-type (read port)])
     (payment
      (cond
-      [(equal? pay-type 'Credit) (credit-card (read port))]
-      [(equal? pay-type 'Debit) (debit-card (read port))]
-      [(equal? pay-type 'Check) (cheque (read port))]
-      [else  pay-type])
+      [(equal? pay-type 'Credit) (list "Credit" (read port))]
+      [(equal? pay-type 'Debit) (list "Debit" (read port))]
+      [(equal? pay-type 'Check) (list "Check" (read port))]
+      [(equal? pay-type 'Cash) (list "Cash")])
      (read port))))
 
 
