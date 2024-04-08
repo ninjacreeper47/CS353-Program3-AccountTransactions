@@ -6,10 +6,10 @@
 (provide file->accounts)
 (provide (struct-out account))
 
-(struct account (ID name balance transactions) #:inspector #f)
+(struct account (ID name start-balance transactions) #:inspector #f)
 
 
-;Precondition:  Takes in a string representing a filename
+;Precondition:  Takes in a string representing an input  filename. Lines on this file match the formating expected of Account Input
 ;Postcondition: Reads the contents of the  file and returns a hash containing accounts populated from the lines of the file
 (define (file->accounts [filename "ACCOUNTS.TXT"])
   (list->hash
@@ -25,7 +25,7 @@
     (account
      (read port:line) ;id
      (read port:line) ;name
-     (read port:line) ;balance
+     (read port:line) ;start balance
      (list) ;transactions [starts empty]
      )))
 
