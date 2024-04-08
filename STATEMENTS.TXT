@@ -1,1 +1,6 @@
-#hash((234987234981 . #(struct:account 234987234981 "J. T. Kirk & Co." 298.18 (#(struct:transaction 10001 234987234981 23456 #<purchase>)))) (456109801804 . #(struct:account 456109801804 "J. L. Picard" 0.0 (#(struct:transaction 10002 456109801804 23460 #<purchase>) #(struct:transaction 10005 456109801804 23482 #<payment>)))) (982340982348 . #(struct:account 982340982348 "Spacely Sprockets" 29109.14 (#(struct:transaction 10003 982340982348 23460 #<payment>) #(struct:transaction 10004 982340982348 23472 #<purchase>) #(struct:transaction 10006 982340982348 23458 #<purchase>) #(struct:transaction 10007 982340982348 23670 #<payment>)))))
+STATEMENT OF ACCOUNT
+456109801804    J. L. Picard    Starting Balance:     0.0
+STATEMENT OF ACCOUNT
+982340982348    Spacely Sprockets    Starting Balance:     29109.14
+STATEMENT OF ACCOUNT
+234987234981    J. T. Kirk & Co.    Starting Balance:     298.18
