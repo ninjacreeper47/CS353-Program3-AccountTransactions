@@ -1,5 +1,8 @@
 #lang racket
 
+;This module contains the code for generating the accounts datastructure (hash-table).
+
+
 (provide file->accounts)
 (provide (struct-out account))
 
