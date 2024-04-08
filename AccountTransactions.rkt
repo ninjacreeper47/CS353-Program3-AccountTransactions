@@ -2,6 +2,14 @@
 
 (require "AccountInit.rkt")
 
+(provide (struct-out transaction))
+(provide (struct-out purchase))
+(provide (struct-out payment))
+(provide (struct-out credit-card))
+(provide (struct-out debit-card))
+(provide file->transaction-lines)
+(provide process-transactions)
+
 (struct transaction (transaction-ID account-num timestamp purchase/payment ) #:inspector #f)
 (struct purchase (merchant amount))
 (struct payment (pay-method amount))
