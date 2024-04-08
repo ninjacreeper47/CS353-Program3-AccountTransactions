@@ -7,6 +7,7 @@
 (provide (struct-out payment))
 (provide (struct-out credit-card))
 (provide (struct-out debit-card))
+(provide (struct-out cheque))
 (provide file->transaction-lines)
 (provide process-transactions)
 
@@ -15,6 +16,7 @@
 (struct payment (pay-method amount))
 (struct credit-card (card-num))
 (struct debit-card (card-num))
+(struct cheque (cheque-num))
 
 ;Precondition: Takes in a string representing an input file name. Lines on this file match the formating expected of Transaction Input
 ;Postcondition: Returns a list of strings where each string is a line of filename
@@ -69,6 +71,7 @@
      (cond
       [(equal? pay-type 'Credit) (credit-card (read port))]
       [(equal? pay-type 'Debit) (debit-card (read port))]
+      [(equal? pay-type 'Check) (cheque (read port))]
       [else  pay-type])
      (read port))))
 
