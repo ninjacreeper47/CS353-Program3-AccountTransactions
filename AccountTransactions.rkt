@@ -2,7 +2,7 @@
 
 (require "AccountInit.rkt")
 
-(struct transaction (transaction-ID account-num timestamp purchase/payment ))
+(struct transaction (transaction-ID account-num timestamp purchase/payment ) #:inspector #f)
 (struct purchase (merchant amount))
 (struct payment (pay-method amount))
 (struct credit-card (card-num))
@@ -30,8 +30,9 @@
   (let ([port:line (open-input-string trans-line)])
     (let ([trans-type (read port:line)] [customer-num (read port:line)] [time-stamp (read port:line)])
       (hash-update accounts customer-num
-                   (new-transaction-on-account (hash-ref accounts customer-num)
-                                               (transaction trans-ID customer-num time-stamp (gather-type-specific-information trans-type port:line)))))))
+                   (lambda (acc) (new-transaction-on-account
+                                  acc
+                                  (transaction trans-ID customer-num time-stamp (gather-type-specific-information trans-type port:line))))))))
 
 ;Precondition:  Takes in a trans-type string, which must either be Purchase or Payment.
 ;Takes in a port where the stream begins with the relevant entries for the type
@@ -72,6 +73,6 @@
    (account-ID target-account)
    (account-name target-account)
    (account-start-balance target-account)
-   (append (account-transactions target-account) transaction))) 
+   (append  (account-transactions target-account)(list transaction)))) 
   
     
