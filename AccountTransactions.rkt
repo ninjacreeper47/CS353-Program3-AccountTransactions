@@ -1,5 +1,6 @@
 #lang racket
 
+;This module is dedicated to processing transactions
 (require "AccountInit.rkt")
 
 (provide (struct-out transaction))
