@@ -7,7 +7,7 @@
 (require "AccountTransactions.rkt")
 
 ;The main function of the program. Run this!
-;Creates an output file in a statement format using  the accounts and transaction files for this assignment
+;Creates an output file in a statement format using  the accounts and transaction files for this assignment. If an existing file matches filename, then that file will be replaced!
 (define (generate-statements [output-filename "STATEMENTS.TXT"])
   (let
       ([out (open-output-file output-filename #:exists 'replace)]
