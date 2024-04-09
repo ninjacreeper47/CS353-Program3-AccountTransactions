@@ -5,9 +5,9 @@ STATEMENT OF ACCOUNT
 10005    Payment    Cash    105.0
 
 
-Total Purchases:        TODO: total purchases
-Total Payments:        TODO: total payments
-Ending Balance:        TODO:ending balance
+Total Purchases:        132.75
+Total Payments:        105.00
+Ending Balance:        27.75
 *********************************************************
 STATEMENT OF ACCOUNT
 982340982348    Spacely Sprockets    Starting Balance:     29109.14
@@ -18,9 +18,9 @@ STATEMENT OF ACCOUNT
 10007    Payment    Check    20000.0
 
 
-Total Purchases:        TODO: total purchases
-Total Payments:        TODO: total payments
-Ending Balance:        TODO:ending balance
+Total Purchases:        17710.06
+Total Payments:        30000.00
+Ending Balance:        16819.20
 *********************************************************
 STATEMENT OF ACCOUNT
 234987234981    J. T. Kirk & Co.    Starting Balance:     298.18
@@ -28,7 +28,7 @@ STATEMENT OF ACCOUNT
 10001    Purchase    Culvers    14.72
 
 
-Total Purchases:        TODO: total purchases
-Total Payments:        TODO: total payments
-Ending Balance:        TODO:ending balance
+Total Purchases:        14.72
+Total Payments:        0.00
+Ending Balance:        312.90
 *********************************************************

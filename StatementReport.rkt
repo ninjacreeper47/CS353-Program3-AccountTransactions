@@ -45,19 +45,30 @@
 
 (define (statement-footer acc out)
   (display (string-append "Total Purchases:" tab tab) out )
-  (displayln (total-purchases acc) out)
+  (displayln (~r(total-purchases (account-transactions acc)) #:precision '(= 2)) out)
   (display (string-append "Total Payments:" tab tab) out)
-  (displayln (total-payments acc) out)
+  (displayln (~r (total-payments (account-transactions acc)) #:precision '(= 2)) out)
   (display (string-append "Ending Balance:" tab tab) out)
-  (displayln (ending-balance acc) out)
+  (displayln (~r (ending-balance acc) #:precision '(= 2)) out)
   (displayln block-seperator out ))
 
-(define (total-purchases acc)
-  "TODO: total purchases")
-(define (total-payments acc)
-  "TODO: total payments")
+(define (total-purchases trans-list [val 0])
+  (if (empty? trans-list)
+      val
+      (let* ([trans (first trans-list)])
+        (if (purchase? (transaction-purchase/payment trans))
+            (total-purchases (rest trans-list) (+ val (purchase-amount (transaction-purchase/payment trans))))
+            (total-purchases (rest trans-list) val)))))
+        
+(define (total-payments trans-list [val 0])
+  (if (empty? trans-list)
+      val
+      (let* ([trans (first trans-list)])
+        (if (payment? (transaction-purchase/payment trans))
+            (total-payments (rest trans-list) (+ val (payment-amount (transaction-purchase/payment trans))))
+            (total-payments (rest trans-list) val)))))
 (define (ending-balance acc)
-  "TODO:ending balance")
+  (- (+ (account-start-balance acc) (total-purchases (account-transactions acc))) (total-payments (account-transactions acc))))
 
 (define (transaction->string trans)
   (string-append (number->string (transaction-ID trans)) tab 
